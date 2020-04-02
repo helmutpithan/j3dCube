@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * Write a description of class YellowPlain here.
  *
- * @author (your name)
+ * @author Helmut Pithan h.pithan(at)t-online.de
  * @version (a version number or a date)
  */
 public class YellowPlain

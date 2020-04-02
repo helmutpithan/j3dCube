@@ -2,7 +2,7 @@
 /**
  * Write a description of class Rot here.
  *
- * @author (your name)
+ * @author Helmut Pithan h.pithan(at)t-online.de
  * @version (a version number or a date)
  */
 abstract class Rot

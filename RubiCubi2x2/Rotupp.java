@@ -8,7 +8,7 @@ import javax.media.j3d.*;
 /**
  * Write a description of class RotUp here.
  *
- * @author (your name)
+ * @author Helmut Pithan h.pithan(at)t-online.de
  * @version (a version number or a date)
  */
 public class Rotupp extends Rot

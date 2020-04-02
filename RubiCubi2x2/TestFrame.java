@@ -10,7 +10,7 @@ import javax.vecmath.*;
 /**
  * Write a description of class TestFrame here.
  *
- * @author (your name)
+ * @author Helmut Pithan h.pithan(at)t-online.de
  * @version (a version number or a date)
  */
 public class TestFrame extends Frame implements ItemListener,AdjustmentListener

@@ -10,7 +10,7 @@ import java.awt.event.*;
 /**
  * Write a description of class Koordinatensystem here.
  * 
- * @author (your name) 
+ * @author Helmut Pithan h.pithan(at)t-online.de 
  * @version (a version number or a date)
  */
 

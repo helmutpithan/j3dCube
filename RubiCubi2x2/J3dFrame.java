@@ -25,7 +25,7 @@ import com.sun.j3d.utils.universe.SimpleUniverse;
 /**
  * Write a description of class J3dFrame here.
  *
- * @author (your name)
+ * @author Helmut Pithan h.pithan(at)t-online.de
  * @version (a version number or a date)
  */
 public class J3dFrame extends  Frame

@@ -6,7 +6,7 @@ import javax.media.j3d.Shape3D;
 /**
  * Write a description of class Cubi0 here.
  *
- * @author (your name)
+ * @author Helmut Pithan h.pithan(at)t-online.de
  * @version (a version number or a date)
  */
 public class Cubi7 extends Cubi

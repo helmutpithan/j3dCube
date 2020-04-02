@@ -6,7 +6,7 @@ import javax.media.j3d.Shape3D;
 /**
  * Write a description of class Cubi1 here.
  *
- * @author (your name)
+ * @author Helmut Pithan h.pithan(at)t-online.de
  * @version (a version number or a date)
  */
 // rot -blau-gelbe Ecke gegnüber cubi0  grün durch rot ersetzen und rot durch blau
