@@ -919,7 +919,7 @@ public BranchGroup getCubi0BranchGroup(BranchGroup branchGroup,float[][] colors)
      //branchGroup.setUserData( "Cubi0" );
      return branchgroup; 
     }
-    
+ /*   
     static public BranchGroup getCubi0BranchGroup(int id,int place,int position,float[][] colors) 
    { int i=0;
     int j=0;
@@ -954,6 +954,7 @@ public BranchGroup getCubi0BranchGroup(BranchGroup branchGroup,float[][] colors)
      //branchGroup.setUserData( "Cubi0" );
      return branchgroup; 
     }
+    */
     
     static public BranchGroup getCubi0BranchGroup(int id,int place,float[][] colors) 
    { int i=0;

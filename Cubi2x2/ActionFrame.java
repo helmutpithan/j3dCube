@@ -34,82 +34,37 @@ public class ActionFrame extends Frame implements ItemListener //,AdjustmentList
     
     static TextArea textArea;
     
-    String[][] sArray={ {"Examples",""},   					  					
-    					
-    					
-    					{"rechte obere Ecke kippen","RfrFRfrF"}, 
-    					{"1","rdRD"},
-    					{"2","RUrURUUr"},
-    					{"3","RuRFFrURFFRR"},
-    					{"4","UUrLLDDbrubrubrU"}    					
-    						                  };
+  String[][] sArray={ {"Examples",""},                                                                                                               
+                        {"1","rdRD"},
+                        {"2","RUrURUUr"},
+                        {"3","RuRFFrURFFRR"}                     
+                                              };
  String[][] gArray={ {"Generators",""},
- 	                    {"Group","UDLRFBudlrfbMNOXYZmnoxyz"}, 	                    
-    					{"Classic","UuDdFfBbLlRr"},
-    					{"Sub1","UuFf"},
-    					{"Sub2","UuFfLl"},
-    					{"Sub3","UuLlDd"},
-    					{"Sub4","MmDdUu"},
-    					{"Sub5","FfLlRrBb"}
-    					   						                  };   
-    						                  
-	String[][] macroArray={ {"Macros"," "," "},
- 	                        {"rdRD","rdRD"," vorn rechts oben einsetzen "}, 	                        
- 	                        {"RUrURUUr","RUrURUUr","ein gelber ist vorn links oben"},
- 	                        {"RuRFFrURFFRR","RuRFFrURFFRR","4 gelbe oben 2 passende nach hinten"},
- 	                        {"*three Corners","fUBuFUbu","A commutator that cycles three corners and leaves the rest of the cubies intact"},
-    					    {"two UpCornwes","LdlfdFUfDFLDlu","Rotates two corner cubies in place and does not move any of the other cubies"},
-    					    {"two DoBCornwes","LulbuBDbUBLUld","Rotates two corner cubies in place and does not move any of the other cubies"},
-    					    {"two DoLCornwes","FufluLDlULFUfd","Rotates two corner cubies in place and does not move any of the other cubies"},
-    					    {"two DoFCornwes","RurfuFDfUFRUrd","Rotates two corner cubies in place and does not move any of the other cubies"},
-    					    {"two DoRCornwes","BubruRDrURBUbd","Rotates two corner cubies in place and does not move any of the other cubies"},    					       					    			   
-    		
-    					    {"cycle4-5-7","fUBuFUbu","Cycles three corner cubies."},
-    					    {"Three Horners","rURurUFRbRBRfRR","Swaps two corners and two edges."},
-    					    {"Mist","rURurUFRbRBRfRR","Swaps two corners and two edges."},    					    
-    					    {"Flip5&7d","BRFLDlDfrbldLd","Flips two adjacent edge cubies."},
-    					    {"Flip3&5d","RFLBDbDlfrbdBd","Flips two adjacent edge cubies."},
-    					    {"Flip1&3","FLBRDrDblfrdRd","Flips two adjacent edge cubies."},
-    					    {"Flip1&7","LBRFDfDrblfdFd","Flips two adjacent edge cubies."},    					   
-    					    {"FrontthreeCorners_1","LDRdlDrd","A commutator that cycles three corners 4-6-0 and leaves the rest of the cubies intact"},
-    					    {"20-Top-DownthreeCorners","fUBuFUbu","A commutator that cycles three corners 22-16-18 and leaves the rest of the cubies intact"},
-    					    {"0*-DownthreeCorners","dfDBdFDb","A commutator that cycles three corners 2-4-6-2 and leaves the rest of the cubies intact"},
-    					    {"2*-DownthreeCorners","bDFdBDfd","A commutator that cycles three corners 0-4-6-0 and leaves the rest of the cubies intact"},   					   
-    					    {"4*-DownthreeCorners","lDRdLDrd","A commutator that cycles three corners 0-2-6-0 and leaves the rest of the cubies intact"},
-    					    {"6*-DownthreeCorners","fDBdFDbd","A commutator that cycles three corners  0-2-4-0 and leaves the rest of the cubies intact"},    					
-    						                  }; 
-    						                  
-   String[][] placemacroArray={ {"PlaceMacros"," "," "},
- 	                        {"p22->p18->p16->p22","fUBuFUbu","p22->p18->p16->p22"},
- 	                        {"p22->p16->p18->p22","UBufUbuF","p22->p16->p18->p22","UBufUbuF"},
- 	                        {"p16->p20->p18->p16","rULuRUlu","p16->p20->p18->p16"},
- 	                        {"p16->p18->p20->p16","ULurUluR","p16->p18->p20->p16"},
- 	                        {"cycle_0_2_4","fDBdFDbd","p0->p2->p4->p0"},
- 	                        {"cycle_0_2_6","lDRdLDrd","p0->p2->p6->p0"},
- 	                        {"cycle_0_4_6","bDFdBDfd","p0->p4->p6->p0"}, 	                        
- 	                        {"cycle_2_4_6","rDLdRDld","p2->p4->p6->p2"}, 	                        
- 	                        {"cycle_0_2_4^-1","DBdfDbdF","p0->p4->p2->p0"},
- 	                        {"cycle_0_2_6^-1","DRdlDrdL","p0->p6->p2->p0"},
- 	                        {"cycle_0_4_6^-1","DFdbDfdB","p0->p6->p4->p0"}, 	                        
- 	                        {"cycle_2_4_6^-1","DLdrDldR","p2->p6->p4->p2"},
- 	                        {"swap_2_4","fDBdFDbdDFdbDfdB","swaps cubies on 2 and 4"},
- 	                        {"rot-p1 & rot->p22","LdlfdFUfDFLDlu","Rotates two corner cubies in place and leaves the rest of the cubies intact"},
- 	                        {"flips-p17 & flips->p23","FRBLUlUbrfluLu","Flips two adjacent edge cubies."},
- 	                        {"flips-p17 & flips->p21","LfUlFbUrFuRfBu","flip two opposite edge cubies."},
- 	                        {"flips-p19 & flips->p23","FrUfRlUbRuBrLu","flip two opposite edge cubies."}, 	                        
- 	                        {"*p4<->p5","rURurUFRbRBRfRR","Swaps two corners."},
- 	                        {"C10","FDfdFDf","Rotates the UFL corner cubie clockwise in place"},
- 	                        {"C12","FDf"," Brings a corner cubie from the bottom to the top face directly above it and rotates it counter-clockwise or clockwise on the way up"},	                        
-    					    {"C121","rDR"," Brings a corner cubie from the bottom to the top face directly above it and rotates it counter-clockwise or clockwise on the way up"},
-    					    {"C14","fdFDLDl"," Moves an edge cubie from the lower face to the middle face without altering the top face at all"},
-    					    {"C15","FDfdrdR"," Moves an edge cubie from the lower face to the middle face without altering the top face at all"},
-    		       					
-    						                  };	
+                        {"Group","UDLRFBudlrfbMNOXYZmnoxyz"},                       
+                        {"Classic","UuDdFfBbLlRr"},
+                        {"Sub1","UuFf"},
+                        {"Sub2","UuFfLl"},
+                        {"Sub3","UuLlDd"},                        
+                        {"Sub4","FfLlRrBb"}
+                                                                  };   
+                                              
+    String[][] macroArray={ {"Macros"," "," "},                                                       
+                            {"cycle_0_1_2","fDBdFDbd","p0->p1->p2->p0"},
+                            {"cycle_0_1_3","lDRdLDrd","p0->p1->p3->p0"},
+                            {"cycle_0_2_3","bDFdBDfd","p0->p2->p3->p0"},                            
+                            {"cycle_1_2_3","rDLdRDld","p1->p2->p3->p1"},                            
+                            {"cycle_0_1_2^-1","DBdfDbdF","p0->p2->p1->p0"},
+                            {"cycle_0_1_3^-1","DRdlDrdL","p0->p3->p1->p0"},
+                            {"cycle_0_2_3^-1","DFdbDfdB","p0->p3->p2->p0"},                             
+                            {"cycle_1_2_3^-1","DLdrDldR","p1->p3->p2->p1"}                          
+                                              }; 
+                                              
+     
     Choice exampleChoice;
-	Choice generatorChoice;
-	Choice macroChoice;
-	Choice placemacroChoice;
-	
+    Choice generatorChoice;
+    Choice macroChoice;
+    Choice placemacroChoice;
+    
     TextField inputText;
     TextField invText;
     TextField nText;
@@ -152,10 +107,10 @@ public class ActionFrame extends Frame implements ItemListener //,AdjustmentList
     Button resetButton;
 public void changeId(int a, int aid)
 {
-	Cubi cubiA=null;
-	
-	
-	switch(a)
+    Cubi cubiA=null;
+    
+    
+    switch(a)
     { case 0:cubiA=J3dFrame.cubi0; break;
       case 1:cubiA=J3dFrame.cubi1; break;
       case 2:cubiA=J3dFrame.cubi2; break;
@@ -165,19 +120,19 @@ public void changeId(int a, int aid)
       case 6:cubiA=J3dFrame.cubi6; break;
       case 7:cubiA=J3dFrame.cubi7; break;
        
-      default:System.out.println("Achsencubi");	  
-	 }
-	 
+      default:System.out.println("Achsencubi");   
+     }
+     
     cubiA.setId(aid);
        
   }            
     
 public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
 {
-	Cubi cubiA=null;
-	Cubi cubiB=null;
-	
-	switch(a)
+    Cubi cubiA=null;
+    Cubi cubiB=null;
+    
+    switch(a)
     { case 0:cubiA=J3dFrame.cubi0; break;
       case 1:cubiA=J3dFrame.cubi1; break;
       case 2:cubiA=J3dFrame.cubi2; break;
@@ -187,10 +142,10 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
       case 6:cubiA=J3dFrame.cubi6; break;
       case 7:cubiA=J3dFrame.cubi7; break;
      
-      default:System.out.println("Achsencubi");	  
-	 }
-	 
-	 switch(b)
+      default:System.out.println("Achsencubi");   
+     }
+     
+     switch(b)
     { case 0:cubiB=J3dFrame.cubi0; break;
       case 1:cubiB=J3dFrame.cubi1; break;
       case 2:cubiB=J3dFrame.cubi2; break;
@@ -201,9 +156,9 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
       case 7:cubiB=J3dFrame.cubi7; break;
       
       
-      default:System.out.println("Achsencubi");	  
-	 }
-	 
+      default:System.out.println("Achsencubi");   
+     }
+     
     cubiA.setPlace( aplace);
     cubiA.setId(aid);
     
@@ -212,12 +167,12 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
   }    
     
   public void idandPlaces(int a,int b)
-  { 	int placeA;int placeB;
-	int idA;int idB;
-	Cubi cubiA=null;
-	Cubi cubiB=null;
-	
-	switch(a)
+  {     int placeA;int placeB;
+    int idA;int idB;
+    Cubi cubiA=null;
+    Cubi cubiB=null;
+    
+    switch(a)
     { case 0:cubiA=J3dFrame.cubi0; break;
       case 1:cubiA=J3dFrame.cubi1; break;
       case 2:cubiA=J3dFrame.cubi2; break;
@@ -226,10 +181,10 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
       case 5:cubiA=J3dFrame.cubi5; break;
       case 6:cubiA=J3dFrame.cubi6; break;
       case 7:cubiA=J3dFrame.cubi7; break;
-      default:System.out.println("Achsencubi");	  
-	 }
-	 
-	 switch(b)
+      default:System.out.println("Achsencubi");   
+     }
+     
+     switch(b)
     { case 0:cubiB=J3dFrame.cubi0; break;
       case 1:cubiB=J3dFrame.cubi1; break;
       case 2:cubiB=J3dFrame.cubi2; break;
@@ -238,10 +193,10 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
       case 5:cubiB=J3dFrame.cubi5; break;
       case 6:cubiB=J3dFrame.cubi6; break;
       case 7:cubiB=J3dFrame.cubi7; break;
-      default:System.out.println("Achsencubi");	  
-	 }
-	
-	
+      default:System.out.println("Achsencubi");   
+     }
+    
+    
   
      placeA =cubiA.getPlace();
      aplaceText.setText(""+placeA);
@@ -295,15 +250,15 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
                    case 102 :Rotfrontt.frontAction();break;
                    case 66  :RotBack.BackAction(); break;
                    case 98  :Rotbakk.backAction(); break;
-                                     	   
+                                           
                    case 88  :RotX.XAction(); break;
                    case 120 :Rot_x.x_Action(); break;  
                    case 89  :RotY.YAction(); break;
                    case 121 :Rot_y.y_Action();break;
                    case 90  :RotZ.ZAction(); break;
                    case 122 :Rot_z.z_Action();break;
-                   	   
-                   	   
+                       
+                       
                    default:System.out.println("Fehler in der Eingabe!");                 
                     }
             }
@@ -614,18 +569,7 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
         macroChoice.setBounds(580,65,140,20);
         add( macroChoice);
         
- //  placemacroChoice        
-       placemacroChoice = new java.awt.Choice();
-       for (int i=0;i<placemacroArray.length;i++)
-       placemacroChoice.addItem(placemacroArray[i][0]);
-     
-       try {
-            placemacroChoice.select(0);
-        }
-         catch (IllegalArgumentException e) {System.out.println(e) ;}
-        placemacroChoice.addItemListener(this);
-        placemacroChoice.setBounds(500,240,200,20);
-        add( placemacroChoice);       
+   
         
 //cycleTestButton
  TextField cycleTestText=new TextField("");
@@ -639,16 +583,17 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
          cycleTestButton.addActionListener(new ActionListener()
          { public void actionPerformed(ActionEvent e)
              { //inputText.setText("UUrLLDDbrubrubrU");
-             	 cycleTestText.setText("0");
-             	 String t=new String(inputText.getText());
+                 cycleTestText.setText("0");
+                 String t=new String(inputText.getText());
                int l=t.length();
               if (t.length()>0)
               {
                int k=0;int m=1000;
                do           
-               { for (int i=0;i<l;i++)
+               { 
+                for (int i=0;i<l;i++)
                 {int a=t.charAt(i);  
-                	 
+                     
                  action(a);}                                                                           
                                              
                 k=k+1;
@@ -658,8 +603,8 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
                 
               }//
               while (!erfolgreich()&& k<m);  
-              	                	  
-              	  //cycleTestText.setText(s);
+                                      
+                  //cycleTestText.setText(s);
                
                   }               
                 }           
@@ -860,7 +805,7 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
             {  
             public void actionPerformed(ActionEvent e)
             {  int m;
-            	try {
+                try {
                  m=Integer.valueOf(mText.getText());
                 }
                catch (NumberFormatException er){m=1;mText.setText("1");} 
@@ -905,7 +850,7 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
                  
                int k=1;
                do
-               { System.out.println("Start: k="+k);               	                 	  
+               { System.out.println("Start: k="+k);                                       
                 String s=new String("UDLRFBudlrfbXYZxyz");
                 s=generatorsText.getText();
                 char[] cs=s.toCharArray();
@@ -951,7 +896,7 @@ public void exchangePlaces(int a,int aplace, int aid,int b,int bplace,int bid)
         resetButton.addActionListener(new ActionListener()
             {  
             public void actionPerformed(ActionEvent e)
-            {   
+            {   cycleTestText.setText("0");
                 reset();    
                 } 
              });
@@ -1237,7 +1182,7 @@ Button yellowDownButton;
             } 
             
          
-         setTitle("Rubik's Cube Console");
+         setTitle("2x2Cube Console");
          setBounds(10,10,720,520);
          //setBounds(10,10,720,720);
          setResizable(false);
@@ -1253,45 +1198,27 @@ Button yellowDownButton;
        Object object = event.getSource();
        if (object == exampleChoice)
        {
-       	int i  = exampleChoice.getSelectedIndex();
+        int i  = exampleChoice.getSelectedIndex();
         //String s=exampleChoice.getSelectedItem();
         inputText.setText(sArray[i][1]);
        }
        if (object == generatorChoice)
        {
-       	int i  = generatorChoice.getSelectedIndex();
+        int i  = generatorChoice.getSelectedIndex();
         //String s=exampleChoice.getSelectedItem();
         generatorsText.setText(gArray[i][1]);
        }
         if (object == macroChoice)
        {
-       	int i  = macroChoice.getSelectedIndex();
+        int i  = macroChoice.getSelectedIndex();
        
         inputText.setText(macroArray[i][1]);
         textArea.append(macroArray[i][2]+"\r\n");
        }
-       if (object == placemacroChoice)
-       {
-       	int i  = placemacroChoice.getSelectedIndex();
        
-        inputText.setText(placemacroArray[i][1]);
-        textArea.append(placemacroArray[i][2]+"\r\n");
-       }
            
     }
- /*   
-  public void adjustmentValueChanged(AdjustmentEvent e) {
-          id  = HSelectora.getValue();
-          cubiText.setText(""+cubi);
-          placeText.setText(""+place);
-          HSelectora.setValue (id);
-          cubiChoice.select(cubi);        
-          //changeId(cubi,id);
-         idText.setText(" "+(id));
-         idChoice.select(id);
-    
-  }
-*/
+ 
    public static void main(String[] args) 
     {  
          ActionFrame actionFrame= new ActionFrame();  

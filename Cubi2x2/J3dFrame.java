@@ -447,7 +447,7 @@ public class J3dFrame extends  Frame
         // Meine Tests
        
         // meine Tests Ende
-   //Verschiebung
+      //Verschiebung
        Vector3d eta = new Vector3d(-0.5 ,-0.5 ,-0.5);
        Transform3D t1 = new Transform3D();
        t1.setTranslation(eta) ;
@@ -456,7 +456,7 @@ public class J3dFrame extends  Frame
   //System.out.println("transformation:"+transformation.toString());
          objTransform = new TransformGroup(transformation);
 
-        //Erlaubt das Transformieren des Objektes, f�r Maus
+        //Erlaubt das Transformieren des Objektes, für Maus
 	  objTransform.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
 	  //objTransform.clearCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
 	  objTransform.setCapability(TransformGroup.ALLOW_TRANSFORM_READ);
