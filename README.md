@@ -3,7 +3,6 @@
 Magic Cube with j3d
 
 PURPOSE OF PROJECT: demonstrating java3d on raspbian raspberry 4, OS X , Debian , Windows
-DATE: 2020/04/13
 
 ### Authors
 
@@ -19,9 +18,9 @@ when using raspbian, you will find the bluej userlib in `/usr/share/bluej/userli
 when using OS X, you will find the bluej userlib in 
 `/Applications/BlueJ\ 4.1.2/BlueJ.app/Contents/Resources/Java/userlib`
 
-when using Debian, you will find the bluej user lib in `/usr/share/bluej/userlib`
+when using Debian (tested on Deb. Jessie), you will find the bluej user lib in `/usr/share/bluej/userlib`
 
-when using Windows, you will find the bluej userlib in `C:\Program Files\BlueJ\lib\userlib`
+when using Windows (tested on Win 7), you will find the bluej userlib in `C:\Program Files\BlueJ\lib\userlib`
 
 ```
 Warning:
